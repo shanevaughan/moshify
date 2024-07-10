@@ -4,6 +4,8 @@
 --color-accent:#ff3400;
 --color-headings:#1b0760;
 --color-body:#918ca4;
+--color-border: #ccc;
+--border-radius: 30px;
 }
 
 *, *::after, *::before {
@@ -188,6 +190,9 @@ margin-right: 2rem;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button--primary{
@@ -245,8 +250,8 @@ margin-right: 2rem;
 /* Inputs */
 
 .input {
-    border-radius: 30px;
-    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
     color: var(--color-headings);
     font-size: 2rem;
     outline: 0;
@@ -257,9 +262,27 @@ margin-right: 2rem;
     color: #cdcdd7;
 }
 
+.input-group {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    display: flex;
+}
+
+/* this defines rules for an input element within the input-group */
+.input-group .input {
+    border: 0;
+    flex-grow: 1;
+    padding: 1.5rem 1rem;
+}
+
+.input-group .button {
+    margin: 4px;
+}
+
 @media screen and (min-width: 1024px) {
     .input {
         font-size: 1.5rem;
     }
     
 }
+

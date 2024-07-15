@@ -194,20 +194,16 @@ margin-right: 2rem;
 
 /* Buttons */
 .button {
-    background-color: white;
-    border-radius: 100px;
-    border: none;
+    border-radius: 40px;
+    border: 0;
     cursor: pointer;
-    font-size:1.8rem;
-    font-style: bold;
+    font-size: 1.8rem;
+    font-weight: 600;
     margin: 1rem 0;
     padding: 2rem 3rem;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .button--primary{
@@ -249,6 +245,12 @@ margin-right: 2rem;
     background-color: var(--color-headings);
 
 }
+
+.button--stretched {
+padding-left: 6rem;
+padding-right: 6rem;
+}
+
 
 .button--block {
     width: 100%;
@@ -498,3 +500,42 @@ font-size: 2.4rem;
     }
 }
 
+/* Callouts */
+.callout {
+    padding: 4rem;
+    border-radius: 5px;
+}
+
+.callout--primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.callout__heading {
+    color: #fff;
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.callout .button {
+    justify-self: center;
+    align-self: center;
+}
+
+.callout__content {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .callout__content{
+        text-align: left;
+    }
+
+    .callout .button {
+        justify-self: start;
+        margin: 2rem;
+    }
+    .callout .grid--1x2 {
+        grid-template-columns: 1fr auto;
+    }
+}

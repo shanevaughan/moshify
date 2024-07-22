@@ -28,7 +28,7 @@ html {
 
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.5;
   color: var(--color-body);
 }
@@ -206,7 +206,7 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   outline: 0;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -280,7 +280,7 @@ a {
   color: var(--color-headings);
   font-size: 2rem;
   outline: 0;
-  padding: 1.5rem 3.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 ::placeholder {
@@ -296,7 +296,7 @@ a {
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem 2rem;
+  width: 0;
 }
 
 .input-group .btn {
@@ -372,10 +372,6 @@ a {
   margin-bottom: 2rem;
 }
 
-.plan--popular {
-  transform: scale(1.1);
-}
-
 .plan--popular .card__header {
   position: relative;
 }
@@ -400,6 +396,9 @@ a {
 @media screen and (min-width: 1024px) {
   .plan__name {
     font-size: 1.4rem;
+  }
+  .plan--popular {
+    transform: scale(1.1);
   }
 
   .plan__price {
@@ -434,10 +433,11 @@ a {
 }
 /* Quotes */
 .quote {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-style: italic;
   color: var(--color-body-darker);
   line-height: 1.3;
+  margin: 0;
 }
 
 .quote__text::before {
@@ -449,7 +449,7 @@ a {
 }
 
 .quote__author {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
   font-style: normal;
   margin-bottom: 0;
@@ -458,7 +458,7 @@ a {
 .quote__organization {
   color: var(--color-headings);
   opacity: 0.4;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-style: normal;
 }
 
@@ -518,6 +518,8 @@ a {
   right: -32px;
 }
 
+
+
 @media screen and (min-width: 768px) {
   .testimonial__image {
     margin: 0;
@@ -536,7 +538,7 @@ a {
 
 /* Callouts */
 .callout {
-  padding: 4rem;
+  padding: 2rem;
   border-radius: 5px;
 }
 
@@ -634,12 +636,12 @@ a {
 
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
 }
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
 }
 
 .container {
@@ -743,8 +745,9 @@ a {
 }
 
 .block-domain__prices {
+  color: var(--color-headings);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
@@ -810,4 +813,77 @@ a {
     width: auto;
     max-width: 700px;
   }
+}
+
+/* Footer */
+.footer {
+  background: #232323;
+}
+
+.footer a {
+  color: #777;
+}
+.footer a:hover {
+  color: #fff;
+  transition: color .3s;
+}
+
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+
+.footer__section .list {
+  margin-top: 0;
+}
+
+
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__brand img {
+  /* TODO: consider refactoring this and apply to all images. */
+  width: 100%;
+  max-width: 230px;
+}
+
+.footer__copyright {
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: .3;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__sections {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+  .footer .collapsible__chevron {
+    display: none;
+  }
+  .footer .collapsible__content {
+    opacity: 1;
+    max-height: 100%;
+  }
+  .footer__brand {
+    order: -1;
+    margin-top: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+  .footer__section {
+    border: 0;
+  }
+  .footer__heading {
+    font-size: 1.6rem;
+  }
+
 }
